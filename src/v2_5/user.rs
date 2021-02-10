@@ -6,5 +6,35 @@
 // option. This file may not be copied, modified, or distributed
 // except according to those terms.
 
+use super::geo::Geo;
+use serde_utils;
+
 #[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
-pub struct User {}
+pub struct User {
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
+
+    #[serde(rename = "buyeruid", skip_serializing_if = "Option::is_none")]
+    pub buyer_uid: Option<String>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub yob: Option<u32>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub gender: Option<String>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub keywords: Option<String>,
+
+    #[serde(rename = "customdata", skip_serializing_if = "Option::is_none")]
+    pub custom_data: Option<String>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub geo: Option<Geo>,
+
+    // #[serde(skip_serializing_if = "Vec::is_empty")]
+    // pub data: Vec<Data>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub ext: Option<serde_utils::Ext>,
+}
