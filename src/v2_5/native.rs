@@ -6,5 +6,24 @@
 // option. This file may not be copied, modified, or distributed
 // except according to those terms.
 
+use serde_utils;
+
+use super::api_framework::APIFramework;
+use super::creative_attribute::CreativeAttribute;
+
 #[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
-pub struct Native {}
+pub struct Native {
+    pub request: String,
+
+    #[serde(rename = "ver", skip_serializing_if = "Option::is_none")]
+    pub version: Option<String>,
+
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    pub api: Vec<APIFramework>,
+
+    #[serde(rename = "battr", skip_serializing_if = "Vec::is_empty")]
+    pub blocked_attrs: Vec<CreativeAttribute>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub ext: Option<serde_utils::Ext>,
+}

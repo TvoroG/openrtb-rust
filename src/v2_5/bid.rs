@@ -1,4 +1,5 @@
 use super::category::Category;
+use super::protocol::Protocol;
 use serde_utils;
 
 #[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
@@ -36,7 +37,7 @@ pub struct Bid {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub api: Option<u32>,
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub protocol: Option<u32>,
+    pub protocol: Option<Protocol>,
     #[serde(skip_serializing_if = "Option::is_none")]
     pub qagmediarating: Option<u32>,
     #[serde(skip_serializing_if = "Option::is_none")]

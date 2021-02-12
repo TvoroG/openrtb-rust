@@ -7,6 +7,7 @@
 // except according to those terms.
 
 mod ad_position;
+mod api_framework;
 mod app;
 mod audio;
 mod banner;
@@ -15,6 +16,7 @@ mod bid;
 mod bid_request;
 mod bid_response;
 mod category;
+mod creative_attribute;
 mod device;
 mod format;
 mod geo;
@@ -22,6 +24,7 @@ mod imp;
 mod metric;
 mod native;
 mod pmp;
+mod protocol;
 mod publisher;
 mod regulations;
 mod seat_bid;
@@ -31,6 +34,7 @@ mod user;
 mod video;
 
 pub use self::ad_position::*;
+pub use self::api_framework::*;
 pub use self::app::*;
 pub use self::audio::*;
 pub use self::banner::*;
@@ -39,6 +43,7 @@ pub use self::bid::*;
 pub use self::bid_request::*;
 pub use self::bid_response::*;
 pub use self::category::*;
+pub use self::creative_attribute::*;
 pub use self::device::*;
 pub use self::format::*;
 pub use self::geo::*;
@@ -46,6 +51,7 @@ pub use self::imp::*;
 pub use self::metric::*;
 pub use self::native::*;
 pub use self::pmp::*;
+pub use self::protocol::*;
 pub use self::publisher::*;
 pub use self::regulations::*;
 pub use self::seat_bid::*;

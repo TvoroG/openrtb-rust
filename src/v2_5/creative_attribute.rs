@@ -1,0 +1,20 @@
+enum_list_module! {
+    CreativeAttribute u8:
+    AudioAdAutoPlay 1,
+    AudioAdUserInitiated 2,
+    ExpandableAuto 3,
+    ExpandableUserInitiatedClick 4,
+    ExpandableUserInitiatedRollover 5,
+    InBannerVideoAdAutoPlay 6,
+    InBannerVideoAdUserInitiated 7,
+    Pop 8,
+    ProvocativeOrSuggestiveImagery 9,
+    ExtremeAnimation 10,
+    Surveys 11,
+    TextOnly 12,
+    UserInitiated 13,
+    WindowsDialogOrAlert 14,
+    HasAudioWithPlayer 15,
+    AdProvidesSkipButton 16,
+    AdobeFlash 17
+}
