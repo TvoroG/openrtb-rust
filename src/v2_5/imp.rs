@@ -56,7 +56,7 @@ pub struct Imp {
     pub tag_id: Option<String>,
 
     #[serde(rename = "bidfloor", skip_serializing_if = "Option::is_none")]
-    pub bid_floor: Option<f32>,
+    pub bid_floor: Option<f64>,
 
     #[serde(rename = "bidfloorcur", skip_serializing_if = "Option::is_none")]
     pub bid_floor_cur: Option<String>,
