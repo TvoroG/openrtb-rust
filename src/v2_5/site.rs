@@ -64,3 +64,24 @@ pub struct Site {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub ext: Option<serde_utils::Ext>,
 }
+
+impl Site {
+    pub fn new(id: String) -> Self {
+        Site {
+            id,
+            name: None,
+            domain: None,
+            cat: vec![],
+            section_cat: vec![],
+            page_cat: vec![],
+            page: None,
+            referrer: None,
+            search: None,
+            mobile: None,
+            privacy_policy: None,
+            publisher: None,
+            keywords: None,
+            ext: None,
+        }
+    }
+}

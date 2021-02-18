@@ -9,7 +9,7 @@
 use super::geo::Geo;
 use serde_utils;
 
-#[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq, Default)]
 pub struct User {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub id: Option<String>,
@@ -37,4 +37,10 @@ pub struct User {
 
     #[serde(skip_serializing_if = "Option::is_none")]
     pub ext: Option<serde_utils::Ext>,
+}
+
+impl User {
+    pub fn new() -> Self {
+        Default::default()
+    }
 }
