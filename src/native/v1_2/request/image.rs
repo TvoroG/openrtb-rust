@@ -2,7 +2,7 @@ use serde_utils;
 
 use super::image_type::ImageTypeID;
 
-#[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq, Default)]
 pub struct Image {
     #[serde(rename = "type", skip_serializing_if = "Option::is_none")]
     pub type_id: Option<ImageTypeID>,
@@ -24,4 +24,10 @@ pub struct Image {
 
     #[serde(skip_serializing_if = "Option::is_none")]
     pub ext: Option<serde_utils::Ext>,
+}
+
+impl Image {
+    pub fn new() -> Self {
+        Default::default()
+    }
 }

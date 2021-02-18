@@ -7,7 +7,7 @@ use super::context_type::ContextTypeID;
 use super::context_sub_type::ContextSubTypeID;
 use super::asset::Asset;
 
-#[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq, Default)]
 pub struct Request {
     #[serde(rename = "ver", skip_serializing_if = "Option::is_none")]
     pub version: Option<String>,
@@ -38,4 +38,10 @@ pub struct Request {
 
     #[serde(skip_serializing_if = "Option::is_none")]
     pub ext: Option<serde_utils::Ext>,
+}
+
+impl Request {
+    pub fn new() -> Self {
+        Default::default()
+    }
 }

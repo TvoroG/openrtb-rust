@@ -8,3 +8,12 @@ pub struct Title {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub ext: Option<serde_utils::Ext>,
 }
+
+impl Title {
+    pub fn new(length: u32) -> Self {
+        Title {
+            length,
+            ext: None,
+        }
+    }
+}

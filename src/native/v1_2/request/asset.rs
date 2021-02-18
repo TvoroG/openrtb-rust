@@ -32,3 +32,29 @@ pub struct Asset {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub ext: Option<serde_utils::Ext>,
 }
+
+impl Asset {
+    pub fn new(id: u32, required: bool) -> Self {
+        Asset {
+            id,
+            required,
+            title: None,
+            image: None,
+            video: None,
+            data: None,
+            ext: None,
+        }
+    }
+
+    pub fn new_title(id: u32, required: bool, title: Title) -> Self {
+        let mut asset = Asset::new(id, required);
+        asset.title = Some(title);
+        asset
+    }
+
+    pub fn new_image(id: u32, required: bool, image: Image) -> Self {
+        let mut asset = Asset::new(id, required);
+        asset.image = Some(image);
+        asset
+    }
+}
