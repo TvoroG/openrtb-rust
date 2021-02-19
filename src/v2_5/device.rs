@@ -7,6 +7,7 @@
 // except according to those terms.
 
 use super::geo::Geo;
+use super::connection_type::ConnectionType;
 use serde_utils;
 
 #[derive(Serialize, Deserialize, Debug, Clone, PartialEq, Default)]
@@ -66,7 +67,7 @@ pub struct Device {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub mccmnc: Option<String>,
     #[serde(rename = "connectiontype", skip_serializing_if = "Option::is_none")]
-    pub connection_type: Option<u32>,
+    pub connection_type: Option<ConnectionType>,
     #[serde(skip_serializing_if = "Option::is_none")]
     pub ifa: Option<String>,
     #[serde(skip_serializing_if = "Option::is_none")]
