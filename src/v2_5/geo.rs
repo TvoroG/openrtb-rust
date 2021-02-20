@@ -1,6 +1,6 @@
 use serde_utils;
 
-use super::ip_service::IPService;
+use super::ip_location::IPLocation;
 
 #[derive(Serialize, Deserialize, Debug, Clone, PartialEq, Default)]
 pub struct Geo {
@@ -15,7 +15,7 @@ pub struct Geo {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub lastfix: Option<u64>,
     #[serde(rename = "ipservice", skip_serializing_if = "Option::is_none")]
-    pub ip_service: Option<IPService>,
+    pub ip_service: Option<IPLocation>,
     #[serde(skip_serializing_if = "Option::is_none")]
     pub country: Option<String>,
     #[serde(skip_serializing_if = "Option::is_none")]
