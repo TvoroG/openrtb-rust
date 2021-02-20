@@ -10,9 +10,9 @@ use super::category::Category;
 use super::publisher::Publisher;
 use serde_utils;
 
-#[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq, Default)]
 pub struct Site {
-    pub id: String,
+    pub id: Option<String>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,
@@ -66,22 +66,7 @@ pub struct Site {
 }
 
 impl Site {
-    pub fn new(id: String) -> Self {
-        Site {
-            id,
-            name: None,
-            domain: None,
-            cat: vec![],
-            section_cat: vec![],
-            page_cat: vec![],
-            page: None,
-            referrer: None,
-            search: None,
-            mobile: None,
-            privacy_policy: None,
-            publisher: None,
-            keywords: None,
-            ext: None,
-        }
+    pub fn new() -> Self {
+        Default::default()
     }
 }
