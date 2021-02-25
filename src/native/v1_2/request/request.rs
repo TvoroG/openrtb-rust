@@ -33,7 +33,7 @@ pub struct Request {
     #[serde(rename = "seq", skip_serializing_if = "Option::is_none")]
     pub sequence: Option<u8>,
 
-    #[serde(skip_serializing_if = "Vec::is_empty")]
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
     pub assets: Vec<Asset>,
 
     #[serde(skip_serializing_if = "Option::is_none")]

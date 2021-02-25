@@ -4,7 +4,7 @@ use serde_utils;
 pub struct Link {
     pub url: String,
 
-    #[serde(rename = "clicktrackers", skip_serializing_if = "Vec::is_empty")]
+    #[serde(rename = "clicktrackers", default, skip_serializing_if = "Vec::is_empty")]
     pub click_trackers: Vec<String>,
 
     #[serde(rename = "failback", skip_serializing_if = "Option::is_none")]

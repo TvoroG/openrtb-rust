@@ -19,7 +19,7 @@ pub struct Image {
     #[serde(rename = "hmin", skip_serializing_if = "Option::is_none")]
     pub height_min: Option<u32>,
 
-    #[serde(rename = "mimes", skip_serializing_if = "Vec::is_empty")]
+    #[serde(rename = "mimes", default, skip_serializing_if = "Vec::is_empty")]
     pub mimes: Vec<String>,
 
     #[serde(skip_serializing_if = "Option::is_none")]

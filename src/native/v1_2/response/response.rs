@@ -8,12 +8,12 @@ pub struct Response {
     #[serde(rename = "ver", skip_serializing_if = "Option::is_none")]
     pub version: Option<String>,
 
-    #[serde(skip_serializing_if = "Vec::is_empty")]
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
     pub assets: Vec<Asset>,
 
     pub link: Link,
 
-    #[serde(rename = "imptrackers", skip_serializing_if = "Vec::is_empty")]
+    #[serde(rename = "imptrackers", default, skip_serializing_if = "Vec::is_empty")]
     pub imp_trackers: Vec<String>,
 
     #[serde(rename = "jstracker", skip_serializing_if = "Option::is_none")]
